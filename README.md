@@ -3,12 +3,19 @@
 </p>
 
 # Qualia
-Qualia is a deep learning framework for a flexible modeling. Qualia is purely written in Python3 and requires few external libraries.
+Qualia is a deep learning framework for a flexible modeling. Qualia is purely written in Python3 and requires few external libraries. Qualia features in automatic differentiation and dynamic graphing.
+
+|folders/files|description|
+|data||
+|nn||
+|autograd.py||
+|optim.py|optimizers|
+|util.py||
 
 ## Requirements
 
 * Python 3.x
-* Numpy 1.1+
+* Numpy 1.13+
 * Matplotlib 
 
 ## Install
