@@ -16,10 +16,10 @@ Qualia is a deep learning framework for a flexible modeling. Qualia is purely wr
 ## Requirements
 
 * Python 3.x
-* Numpy 1.13+
+* Numpy
 * Matplotlib 
 
-## Install
+## Installation
 
 ### Windows
 
@@ -27,7 +27,25 @@ Qualia is a deep learning framework for a flexible modeling. Qualia is purely wr
 
 ## Examples
 
-
+```
+The following example will compute the Sum of Squared Error 
+        >>> import numpy as np
+        >>> from qualia.autograd import Variable
+        >>> from qualia.nn.functions import sum
+        >>> # Create Variable objects 
+        >>> prediction = Variable(np.random.rand(10,3)) 
+        >>> label = Variable(np.random.rand(10,3),requires_grad=False) 
+        >>> # Write an equation 
+        >>> loss = sum((prediction-label)**2,axis=1)/2 
+        >>> # Print loss 
+        >>> print('loss is: \n{}'.format(loss.data)) 
+        >>> # Calclate gradiant 
+        >>> loss.backward() 
+        >>> # Print gradient 
+        >>> print('gradiant for prediction is: \n{}'.format(prediction.grad)) 
+        >>> # When requires_grad is False, gradients will be zero 
+        >>> print('gradient for label is: \n{}'.format(label.grad)) 
+```
 
 ## License
 
