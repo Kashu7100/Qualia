@@ -1,3 +1,4 @@
+![alt text](https://kashu.ml/wp-content/uploads/2018/08/qualia-1-700x379.png "Qualia Logo")
 # Qualia
 Qualia is a deep learning framework for a flexible modeling. Qualia is purely written in Python3 and requires few external libraries.
 
