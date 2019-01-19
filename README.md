@@ -28,7 +28,7 @@ Qualia is a deep learning framework for a flexible modeling. Qualia is purely wr
 ## Examples
 
 The following example will compute the Sum of Squared Error 
-```
+```bash
 import numpy as np
 from qualia.autograd import Variable
 from qualia.nn.functions import sum
