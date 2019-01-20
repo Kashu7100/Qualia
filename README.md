@@ -21,8 +21,8 @@ Physicalism, which considers there is nothing over or above the physical, has be
 ## Requirements
 
 * Python 3.x
-* Numpy
-* Matplotlib 
+* numpy
+* matplotlib 
 * h5py 
 * tqdm
 
