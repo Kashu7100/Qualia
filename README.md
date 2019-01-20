@@ -23,6 +23,7 @@ Physicalism, which considers there is nothing over or above the physical, has be
 * Python 3.x
 * Numpy
 * Matplotlib 
+* tqdm
 
 ## Installation
 ```
