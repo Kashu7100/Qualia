@@ -101,24 +101,6 @@ class MSELossBackward(Backward):
         def f(x): 
             return 2*(var1.data - target.data)/var1.shape[0]  
         super().__init__(output_shape, var1, f) 
- 
-# TODO 
-class RMSE(Regression): 
-    '''Root of Mean Square Error\n 
-    ''' 
-    def __init__(self, size_average=True, reduce=True): 
-        super().__init__() 
-        self.size_average = size_average 
-        self.reduce = reduce      
- 
-    def forward(self, x, t, *args): 
-        pass 
- 
-class RMSEBackward(Backward):
-    def __init__(self, output_shape, var1, target):
-        def f(x):
-            pass
-        super().__init__(output_shape, var1, f)
     
 # TODO 
 class HuberLoss(Regression): 
@@ -165,24 +147,6 @@ class HuberBackward(Backward):
         super().__init__(output_shape, var1, f)
  
 # Classification 
-# https://en.wikipedia.org/wiki/Loss_functions_for_classification 
-# TODO 
-class HingeLoss(Classification): 
-    ''' 
-    The hinge loss provides a relatively tight, convex upper bound on the 0–1 indicator function.  
-    ''' 
-    pass 
- 
-# TODO 
-class LogisticLoss(Classification): 
-    pass 
- 
-# TODO 
-class NLLLoss(Classification): 
-    '''The negative log likelihood loss. \n 
-    ''' 
-    pass 
- 
 class CrossEntropyLoss(Classification): 
     '''Cross Entropy Loss\n 
     It is useful when training a classification problem with C classes.
