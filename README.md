@@ -26,9 +26,9 @@ Physicalism, which considers there is nothing over or above the physical, has be
 
 ## Installation
 
-### Windows
-
-### Mac/Linux
+'''
+$ python setup.py install
+'''
 
 ## Examples
 
