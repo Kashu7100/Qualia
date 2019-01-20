@@ -25,10 +25,9 @@ Physicalism, which considers there is nothing over or above the physical, has be
 * Matplotlib 
 
 ## Installation
-
-'''
+```
 $ python setup.py install
-'''
+```
 
 ## Examples
 
