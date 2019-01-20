@@ -55,7 +55,7 @@ print('gradient for label is: \n{}'.format(label.grad))
 
 ### Principal component analysis with non-linear autoencoder on MNIST
 <p align="center">
-  <img src="/assets/mnist_ae.png" style="width:200px;"/>
+  <img src="assets/mnist_ae.png" style="width:200px;"/>
 </p>
 
 ## License
