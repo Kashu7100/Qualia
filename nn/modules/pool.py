@@ -31,13 +31,3 @@ class MaxPool2d(Module):
      
     def forward(self, x): 
         return max_pool2d(x, self.kernel_size, self.stride, self.padding, self.dilation) 
-     
-class AvePool1d(Module): 
-    ''' 
-    ''' 
-    pass 
- 
-class AvePool2d(Module): 
-    ''' 
-    ''' 
-    pass
