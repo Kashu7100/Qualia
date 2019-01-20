@@ -251,34 +251,7 @@ class DataLoader(object):
         self.train_dataset.batch = batch
         self.valid_dataset.batch = batch
         self.test_dataset.batch = batch
-
-    """def train_data(self):
-        if self.train_dataset.label is None:
-            for data in self.train_dataset:
-                yield Variable(data, requires_grad=False) 
-        else:
-            for data, label in self.train_dataset:
-                yield Variable(data, requires_grad=False), Variable(label, requires_grad=False) 
-
-    def valid_data(self):
-        if self.valid_dataset is None:
-            raise ValueError
-        if self.valid_dataset.label is None:
-            for data in self.valid_dataset:
-                yield Variable(data, requires_grad=False)
-        else:
-            for data, label in self.valid_dataset:
-                yield Variable(data, requires_grad=False), Variable(label, requires_grad=False) 
-    
-    def test_data(self):
-        if self.test_dataset.label is None:
-            for data in self.test_dataset:
-                yield Variable(data, requires_grad=False)
-        else:
-            for data, label in self.test_dataset:
-                yield Variable(data, requires_grad=False), Variable(label, requires_grad=False) 
-    """
-
+        
 class ImageLoader(DataLoader):
     '''ImageLoader\n
     
