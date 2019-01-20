@@ -55,7 +55,7 @@ print('gradient for label is: \n{}'.format(label.grad))
 
 ### PCA with non-linear autoencoder on MNIST
 <p align="center">
-  <img src="assets/mnist_ae.PNG" style="width:200px;"/>
+  <img src="assets/mnist_ae.PNG" width="200"/>
 </p>
 
 ## License
