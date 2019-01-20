@@ -54,8 +54,8 @@ def trainer(model, criterion, optimizer, dataloader, epochs, minibatch, filename
             model.zero_grad()
             loss.backward()
             optimizer.step()
-            if criterion.live_plot and is_fibonacci(i):
-                plt.plot(fibonacci(len(criterion.losses)) ,[criterion.losses[j] for j in fibonacci(len(criterion.losses))])
+            if criterion.live_plot:
+                plt.plot(len(criterion.losses) ,[criterion.losses[j] for j in len(criterion.losses)])
                 plt.pause(0.001)
                 fig.canvas.draw()
             i += 1
