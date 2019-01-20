@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*- 
 from .module import Module 
 from ..functions import sin, tanh, relu, leakyrelu, elu, sigmoid 
+
+'''
+##############################################################
+Use of activation functions not classes are highly recommended
+##############################################################
+'''
  
 class Sin(Module): 
     '''Trigonometric sine, element-wise.\n 
