@@ -2,7 +2,11 @@
   <img src="https://kashu.ml/wp-content/uploads/2018/08/qualia-1-700x379.png?raw=true" alt="Qualia Logo"/>
 </p>
 
-Qualia is a deep learning framework for a flexible modeling. Qualia is purely written in Python3 and requires few external libraries. Qualia features in automatic differentiation and dynamic graphing.
+Qualia is a deep learning framework for a flexible modeling. Qualia features in automatic differentiation and dynamic graphing.
+
+
+Physicalism, which considers there is nothing over or above the physical, has been criticized by Thomas Nagel (What is it like to be a bat?), Frank C. Jackson (Mary's Room),  David J. Chalmers (Philosophical zombie) and others mainly because it lacks descriptions for the hard problem of consciousness. In the paper "[Absent Qualia, Fading Qualia, Dancing Qualia](http://consc.net/papers/qualia.html)," David argues that if a system reproduces the functional organization of the brain, it will also reproduce the qualia associated with the brain. This library "Qualia" named after the series of arguments in philosophy of mind associated with the qualia, hoping the creation of a system with subjective consciousness. 
+ 
 
 | Component | Description |
 | ---- | --- |
