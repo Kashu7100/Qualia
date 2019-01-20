@@ -16,7 +16,7 @@ Physicalism, which considers there is nothing over or above the physical, has be
 | **qualia.nn** | a neural networks library deeply integrated with autograd designed for maximum flexibility |
 | **qualia.data** | provides datasets for handy testing |
 | **qualia.optim** | optimizers for training neural nets |
-| **qualia.utils** | DataLoader, Trainer and other utility functions for convenience |
+| **qualia.util** | DataLoader, Trainer and other utility functions for convenience |
 
 ## Requirements
 
