@@ -56,7 +56,7 @@ print('gradient for label is: \n{}'.format(label.grad))
 ### classification with CNN
 
 <p align="center">
-  <img src="assets/mnist.PNG" height="450"/>
+  <img src="assets/mnist.PNG" height="400"/>
 </p>
 
 ### PCA with non-linear autoencoder
