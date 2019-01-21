@@ -57,7 +57,8 @@ print('gradient for label is: \n{}'.format(label.grad))
 ### classification with CNN
 
 Classification of handwritten digits done on [mnist](http://yann.lecun.com/exdb/mnist/) dataset using CNN.
-![code](examples/mnist_cnn.py)
+
+**[code](examples/mnist_cnn.py)
 
 <p align="center">
   <img src="assets/mnist.PNG" height="400"/>
