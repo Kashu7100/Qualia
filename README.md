@@ -53,7 +53,10 @@ print('gradiant for prediction is: \n{}'.format(prediction.grad))
 print('gradient for label is: \n{}'.format(label.grad)) 
 ```
 
-### PCA with non-linear autoencoder on MNIST
+### * PCA with non-linear autoencoder
+Dimensionality Reduction is a powerful technique that is widely used in data science to help visualization of data.
+The following image was obtained with non-linear autoencoder implemented with qualia.
+
 <p align="center">
   <img src="assets/mnist_ae.PNG" height="500"/>
 </p>
