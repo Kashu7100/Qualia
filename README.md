@@ -7,7 +7,7 @@ Qualia is a deep learning framework deeply integrated with autograd designed for
 
 Physicalism, which considers there is nothing over or above the physical, has been criticized by Thomas Nagel (What is it like to be a bat?), Frank C. Jackson (Mary's Room),  David J. Chalmers (Philosophical zombie) and others mainly because it lacks descriptions for the hard problem of consciousness. In the paper "[Absent Qualia, Fading Qualia, Dancing Qualia](http://consc.net/papers/qualia.html)," David argues that if a system reproduces the functional organization of the brain, it will also reproduce the qualia associated with the brain. This library "Qualia" named after the series of arguments in philosophy of mind associated with the qualia, hoping the creation of a system with subjective consciousness. 
 
-
+ <br />
 | Component | Description |
 | ---- | --- |
 | **qualia** | a deep learning framework utilizing NumPy |
@@ -53,20 +53,15 @@ print('gradient for label is: \n{}'.format(label.grad))
 ```
 
 ### classification with CNN
-|layer|shape|params|
-| ---- | --- | --- |
-|Conv2d | (N,1,28,28) -> (N,16,28,28) | 416 |
-|Pool2d | (N,16,28,28) -> (N,16,14,14)| None|
-|Conv2d | (N,16,14,14) -> (N,16,14,14)| 6416 |
-|Pool2d | (N,16,14,14) -> (N,16,7,7) | None|
-|Linear | (N,16*7*7) -> (N,128) | 100352 |
-|Linear | (N,128) -> (N,10) | 1280 |
+
+
 
 <p align="center">
   <img src="assets/mnist.PNG" height="400"/>
 </p>
 
 ### PCA with non-linear autoencoder
+
 Dimensionality Reduction is a powerful technique that is widely used in data science to visualize data.
 The following image was obtained with non-linear autoencoder implemented with qualia.
 
