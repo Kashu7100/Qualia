@@ -66,8 +66,8 @@ Classification of handwritten digits done on [mnist](http://yann.lecun.com/exdb/
 
 ### PCA with non-linear autoencoder
 
-Dimensionality Reduction is a powerful technique that is widely used in data science to visualize data.
-The following image was obtained with non-linear autoencoder implemented with qualia.
+Dimensionality Reduction is a technique widely used in data science to visualize data.
+The following image is the plot of two principal components of handwritten digits found by non-linear autoencoder.
 
 <p align="center">
   <img src="assets/mnist_ae.PNG" height="500"/>
