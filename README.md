@@ -32,6 +32,8 @@ $ python setup.py install
 
 ## Examples
 
+### basic usage
+
 The following example will compute the Sum of Squared Error 
 ```python
 import numpy as np
