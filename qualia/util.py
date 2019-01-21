@@ -95,7 +95,7 @@ def tester(model, criterion, dataloader, minibatch, filename, show_img=False):
         num += 1
     print('accuracy: {}'.format(acc/num))
 
-def imgs_show(data, label, pred, size=(28,28), col=6):
+def imgs_show(data, label, pred, size=(28,28), col=4):
     '''
     Draws images along it's labels and the prediction of the model
     
