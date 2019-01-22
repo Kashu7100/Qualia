@@ -74,7 +74,7 @@ Dimensionality Reduction is a technique widely used in data science to visualize
 The following image is the plot of two principal components of handwritten digits found by non-linear autoencoder.
 
 <p align="center">
-  <img src="assets/mnist_ae.PNG" height="500"/>
+  <img src="assets/mnist_ae.PNG" height="450"/>
 </p>
 
 ### time series prediction
@@ -83,7 +83,7 @@ Regression of a neural network with sinusoidal activation functions done on labo
 
 ![source code](examples/timeseries/timeseries.py)
 <p align="center">
-  <img src="assets/labor_stats_pred.png" height="400"/>
+  <img src="assets/labor_stats_pred.png" height="450"/>
 </p>
 
 ## License
