@@ -81,6 +81,8 @@ The following image is the plot of two principal components of handwritten digit
 
 Regression of a neural network with sinusoidal activation functions done on labor_stats data
 
+![source code](examples/timeseries/timeseries.py)
+
 <p align="center">
   <img src="assets/labor_stats_pred.png" height="500"/>
 </p>
