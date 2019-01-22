@@ -77,6 +77,12 @@ The following image is the plot of two principal components of handwritten digit
   <img src="assets/mnist_ae.PNG" height="500"/>
 </p>
 
+### time series prediction
+
+<p align="center">
+  <img src="assets/labor_stats_pred.PNG" height="500"/>
+</p>
+
 ## License
 
 Source codes in the repository follows [MIT](http://www.opensource.org/licenses/MIT) license.
