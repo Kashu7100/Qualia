@@ -80,7 +80,7 @@ The following image is the plot of two principal components of handwritten digit
 ### time series prediction
 
 <p align="center">
-  <img src="assets/labor_stats_pred.PNG" height="500"/>
+  <img src="assets/labor_stats_pred.png" height="500"/>
 </p>
 
 ## License
