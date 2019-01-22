@@ -36,28 +36,6 @@ $ python setup.py install
 
 ## Examples
 
-### basic usage
-
-The following example will compute the Sum of Squared Error 
-```python
-import numpy as np
-from qualia.autograd import Variable
-from qualia.nn.functions import sum
-# Create Variable objects 
-prediction = Variable(np.random.rand(10,3)) 
-label = Variable(np.random.rand(10,3),requires_grad=False) 
-# Write an equation 
-loss = sum((prediction-label)**2,axis=1)/2 
-# Print loss 
-print('loss is: \n{}'.format(loss.data)) 
-# Calclate gradiant 
-loss.backward() 
-# Print gradient 
-print('gradiant for prediction is: \n{}'.format(prediction.grad)) 
-# When requires_grad is False, gradients will be zero 
-print('gradient for label is: \n{}'.format(label.grad)) 
-```
-
 ### classification with CNN
 
 Classification of handwritten digits done on [mnist](http://yann.lecun.com/exdb/mnist/) dataset using CNN
@@ -85,6 +63,30 @@ Regression of a neural network with sinusoidal activation functions done on labo
 <p align="center">
   <img src="assets/labor_stats_pred.png" height="450"/>
 </p>
+
+## Tutorial 
+
+### basic usage
+
+The following example will compute the Sum of Squared Error 
+```python
+import numpy as np
+from qualia.autograd import Variable
+from qualia.nn.functions import sum
+# Create Variable objects 
+prediction = Variable(np.random.rand(10,3)) 
+label = Variable(np.random.rand(10,3),requires_grad=False) 
+# Write an equation 
+loss = sum((prediction-label)**2,axis=1)/2 
+# Print loss 
+print('loss is: \n{}'.format(loss.data)) 
+# Calclate gradiant 
+loss.backward() 
+# Print gradient 
+print('gradiant for prediction is: \n{}'.format(prediction.grad)) 
+# When requires_grad is False, gradients will be zero 
+print('gradient for label is: \n{}'.format(label.grad)) 
+```
 
 ## License
 
