@@ -60,7 +60,7 @@ print('gradient for label is: \n{}'.format(label.grad))
 
 ### classification with CNN
 
-Classification of handwritten digits done on [mnist](http://yann.lecun.com/exdb/mnist/) dataset using CNN.
+Classification of handwritten digits done on [mnist](http://yann.lecun.com/exdb/mnist/) dataset using CNN
 
 ![source code](examples/mnist_cnn.py)
 
@@ -78,6 +78,8 @@ The following image is the plot of two principal components of handwritten digit
 </p>
 
 ### time series prediction
+
+Regression of a neural network with sinusoidal activation functions done on labor_stats data
 
 <p align="center">
   <img src="assets/labor_stats_pred.png" height="500"/>
