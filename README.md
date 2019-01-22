@@ -64,7 +64,7 @@ Regression of a neural network with sinusoidal activation functions done on labo
   <img src="assets/labor_stats_pred.png" height="450"/>
 </p>
 
-## Tutorial 
+## Tutorials 
 
 ### basic usage
 
