@@ -40,7 +40,7 @@ $ python setup.py install
 
 Classification of handwritten digits done on [mnist](http://yann.lecun.com/exdb/mnist/) dataset using CNN
 
-![source code](examples/mnist_cnn.py)
+![source code](https://github.com/Kashu7100/Qualia/blob/master/examples/mnist/classification_cnn.py)
 
 <p align="center">
   <img src="assets/mnist.PNG" height="400"/>
