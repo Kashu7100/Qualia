@@ -39,7 +39,6 @@ $ python setup.py install
 ### classification with CNN
 
 Classification of handwritten digits done on [mnist](http://yann.lecun.com/exdb/mnist/) dataset using CNN
-
 ![source code](https://github.com/Kashu7100/Qualia/blob/master/examples/mnist/classification_cnn.py)
 
 <p align="center">
