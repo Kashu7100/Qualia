@@ -136,6 +136,10 @@ class Variable(object):
         result.set_creator(PowBackward(result.shape, other, self)) 
         return result 
  
+class FunctionGenerator(object):
+    def __iter__(self):
+        raise NotImplementedError 
+ 
 class Backward(object): 
     '''Base class for all backward classes.\n 
     All backward class should inherit this class. 
@@ -148,13 +152,15 @@ class Backward(object):
         self.shape = output_shape 
         self.var = tuple(i for i in args if type(i) is Variable) 
         self.func = tuple(i for i in args if type(i) is types.FunctionType) 
-        if len(self.var) != len(self.func): 
-            raise Exception('number of variables and functions should match up.') 
+        if not bool(self.func):
+            self.func = tuple(i for i in args if isinstance(i, FunctionGenerator))[0]
+        if len(self.var) != len([*self.func]): 
+            raise Exception('number of variables and functions should match up. Got {} var: {} and {} func: {}'.format(len(self.var), self.var, len([*self.func]), [*self.func])) 
  
     def backward(self, arg): 
-        arg = self.handle_broadcast(arg)        
-        for i, var in enumerate(self.var):
-            var.grad = self.func[i](arg)
+        arg = self.handle_broadcast(arg)
+        for func, var in zip(self.func, self.var):
+            var.grad = func(arg)
             if var.creator is not None:
                 var.backward(var.grad)
             if not var.requires_grad:
