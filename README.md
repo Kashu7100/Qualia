@@ -39,6 +39,7 @@ $ python setup.py install
 ### classification with CNN
 
 Classification of handwritten digits done on [mnist](http://yann.lecun.com/exdb/mnist/) dataset using CNN
+
 ![source code](https://github.com/Kashu7100/Qualia/blob/master/examples/mnist/classification_cnn.py)
 
 <p align="center">
@@ -59,6 +60,7 @@ The following image is the plot of two principal components of handwritten digit
 Regression of a neural network with sinusoidal activation functions done on labor_stats data
 
 ![source code](examples/timeseries/timeseries.py)
+
 <p align="center">
   <img src="assets/labor_stats_pred.png" height="450"/>
 </p>
