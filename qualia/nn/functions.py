@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
 import numpy as np 
-from ..autograd import Variable, Backward 
+from ..autograd import Variable, Backward, FunctionGenerator 
  
 def exp(x): 
     '''Calculate the exponential of all elements in the input array.\n 
@@ -420,30 +420,27 @@ class MeanBackward(Backward):
             return result/div 
         super().__init__(output_shape, var1, f) 
  
-def concat(a, b, axis=1): 
+def concat(*args, axis=1):
     '''Join a sequence of arrays along an existing axis.\n 
     Args: 
-        a (Variable): The array a must have the same shape as b, except in the dimension corresponding to axis. 
-        b (Variable): The array b must have the same shape as a, except in the dimension corresponding to axis. 
+        *args (Variable): The arrays must have the same shape, except in the dimension corresponding to axis.
         axis (int): The axis along which the arrays will be joined. Default is 1. 
     Returns: 
         (Variable): The concatenated array. 
     ''' 
-    result = Variable(np.concatenate((a.data, b.data), axis)) 
-    result.set_creator(ConcatBackward(result.shape, a, b, axis)) 
+    result = Variable(np.concatenate(tuple(i.data for i in args), axis)) 
+    result.set_creator(ConcatBackward_dev(result.shape, axis, *args)) 
     return result 
- 
-class ConcatBackward(Backward): 
-    def __init__(self, output_shape, var1, var2, axis): 
-        shape = var1.shape 
-        split = shape[axis] 
-        def f1(x): 
-            result, _ = np.split(x,[split],axis=axis) 
-            return result 
-        def f2(x): 
-            _, result = np.split(x,[split],axis=axis) 
-            return result 
-        super().__init__(output_shape, var1, var2, f1, f2) 
+
+class ConcatBackward(Backward):
+    def __init__(self, output_shape, axis, *args):
+        s = [i.shape[axis] for i in args]
+        split = [np.sum(s[n] for n in range(i+1)) for i in range(len(s))]
+        class Gen(FunctionGenerator):
+            def __iter__(self):
+                for i in range(len(split)):
+                    yield lambda x: np.split(x,split)[i]
+        super().__init__(output_shape, *args, Gen()) 
  
 def reshape(x, shape): 
     '''Reshape a Variable\n 
