@@ -439,7 +439,7 @@ class ConcatBackward(Backward):
         class Gen(FunctionGenerator):
             def __iter__(self):
                 for i in range(len(split)):
-                    yield lambda x: np.split(x,split)[i]
+                    yield lambda x: np.split(x,split,axis=axis)[i]
         super().__init__(output_shape, *args, Gen()) 
  
 def reshape(x, shape): 
