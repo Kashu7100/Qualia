@@ -429,7 +429,7 @@ def concat(*args, axis=1):
         (Variable): The concatenated array. 
     ''' 
     result = Variable(np.concatenate(tuple(i.data for i in args), axis)) 
-    result.set_creator(ConcatBackward_dev(result.shape, axis, *args)) 
+    result.set_creator(ConcatBackward(result.shape, axis, *args)) 
     return result 
 
 class ConcatBackward(Backward):
