@@ -441,7 +441,37 @@ class ConcatBackward(Backward):
                 for i in range(len(split)):
                     yield lambda x: np.split(x,split,axis=axis)[i]
         super().__init__(output_shape, *args, Gen()) 
+
+def repeat(x, num):
+    '''Repeats input 
+    Args:
+        x (Variable): Input array
+        num (int): The number of repetitions for each element.
+    '''
+    tmp = np.repeat(x.data.reshape(1,*x.shape), num, axis=0)
+    result = [Variable(tmp[i]) for i in range(num)]
+    backward = RepeatBackward(x.shape, x, num)
+    for i in result:
+        i.set_creator(backward) 
+    return result 
  
+class RepeatBackward(Backward):
+    def __init__(self, output_shape, var1, num):
+        self.creator = var1.creator
+        self.counter = 0
+        def f(x):
+            if self.counter == 0:
+                var1.creator = None
+                self.counter += 1
+                return x
+            elif self.counter == num - 1:
+                var1.creator = self.creator
+                return var1.grad + x
+            else:
+                self.counter += 1
+                return var1.grad + x
+        super().__init__(output_shape, var1, f)        
+        
 def reshape(x, shape): 
     '''Reshape a Variable\n 
     Args: 
