@@ -447,6 +447,8 @@ def repeat(x, num):
     Args:
         x (Variable): Input array
         num (int): The number of repetitions for each element.
+    Returns:
+        (Variable_1,...,Variable_num): identical variables
     '''
     tmp = np.repeat(x.data.reshape(1,*x.shape), num, axis=0)
     result = [Variable(tmp[i]) for i in range(num)]
