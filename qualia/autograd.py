@@ -47,9 +47,9 @@ class Variable(object):
         self.creator = obj 
      
     def backward(self, *args): 
-        if self.grad is None: 
-            args = (np.ones_like(self.data),)     
-        self.creator.backward(args[0]) 
+        if not bool(args):
+            args = [np.ones_like(self.data)]     
+        self.creator.backward(*args) 
      
     def handle_const(self, const): 
         if type(const) is Variable: 
@@ -62,6 +62,11 @@ class Variable(object):
         if key == 'data':
             object.__setattr__(self, 'shape', self.data.shape)
             object.__setattr__(self, 'ndim', self.data.ndim) 
+    
+    def __getitem__(self, slice):
+        result = Variable(self.data[slice])
+        result.set_creator(SliceBackward(result.shape, self, slice))
+        return result
      
     def __len__(self): 
         return self.ndim
@@ -157,10 +162,10 @@ class Backward(object):
         if len(self.var) != len([*self.func]): 
             raise Exception('number of variables and functions should match up. Got {} var: {} and {} func: {}'.format(len(self.var), self.var, len([*self.func]), [*self.func])) 
  
-    def backward(self, arg): 
-        arg = self.handle_broadcast(arg)
+    def backward(self, *args): 
+        args = [self.handle_broadcast(i) for i in args]
         for func, var in zip(self.func, self.var):
-            var.grad = func(arg)
+            var.grad = func(*args)
             if var.creator is not None:
                 var.backward(var.grad)
             if not var.requires_grad:
@@ -181,6 +186,14 @@ class Backward(object):
             return arg.reshape(self.shape) 
         else: 
             return arg 
+         
+class SliceBackward(Backward):
+    def __init__(self, output_shape, var1, slice):
+        def f(x):
+            result = np.zeros_like(var1.data)
+            result[slice] = x
+            return result
+        super().__init__(output_shape, var1, f)     
      
 class AddBackward(Backward): 
     def __init__(self, output_shape, var1, var2): 
