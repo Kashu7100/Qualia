@@ -79,13 +79,15 @@ Qualia uses the so called “Define-by-Run” scheme, so forward computation its
 ```python
 x = Variable(np.array([5]))
 y = x**2 - 2*x + 1
-# prints result of the computation: y = 16
+# prints result of the computation: 
+# [16]
 print(y.data)
 ```
 At this moment we can compute the derivative.
 ```python
 y.backward()
-# prints gradient of x: x = 8 
+# prints gradient of x:
+# [8]
 print(x.grad)
 ```
 All these computations can be generalized to a multidimensional tensor input. When the output is not a scalar quantity, a tenspr  with the same dimentions as the output that is filled with ones will be given by default to start backward computation.
