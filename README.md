@@ -67,6 +67,9 @@ Regression of a neural network with sinusoidal activation functions done on labo
 
 ## Tutorials 
 
+### automatic differentiation (AD)
+Fundamental to [AD](https://en.wikipedia.org/wiki/Automatic_differentiation) is the decomposition of differentials provided by the chain rule. The qualia implements the reverse accumulation AD.
+
 ### basic usage
 
 The following example will compute the Sum of Squared Error 
