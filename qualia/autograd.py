@@ -165,7 +165,10 @@ class Backward(object):
     def backward(self, *args): 
         args = [self.handle_broadcast(i) for i in args]
         for func, var in zip(self.func, self.var):
-            var.grad = func(*args)
+            if var.grad is None:
+                var.grad = func(*args)
+            else:
+                var.grad += func(*args)
             if var.creator is not None:
                 var.backward(var.grad)
             if not var.requires_grad:
