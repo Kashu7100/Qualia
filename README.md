@@ -76,14 +76,17 @@ import numpy as np
 from qualia.autograd import Variable
 ```
 Qualia uses the so called “Define-by-Run” scheme, so forward computation itself defines the network. By using a Variable object, Qualia can keep track of every operation. Here, the resulting y is also a Variable object.
-```
+```python
 x = Variable(np.array([5]))
 y = x**2 - 2*x + 1
+# prints result of the computation: y = 16
 print(y.data)
 ```
 At this moment we can compute the derivative.
-```
+```python
 y.backward()
+#prints gradient of x: x = 8 
+print(x.grad)
 ```
 
 
