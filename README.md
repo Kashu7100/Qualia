@@ -114,8 +114,8 @@ class ConvNet(Module):
         self.fc3 = Linear(84, 10)
 
     def forward(self, x):
-        x = max_pool2d(relu(self.conv1(x)), 2)
-        x = max_pool2d(relu(self.conv2(x)), 2)
+        x = max_pool2d(relu(self.conv1(x)), (2,2))
+        x = max_pool2d(relu(self.conv2(x)), (2,2))
         x = reshape(x, (-1,*x.shape))
         x = relu(self.fc1(x))
         x = relu(self.fc2(x))
