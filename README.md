@@ -122,7 +122,15 @@ class ConvNet(Module):
         x = self.fc3(x)
         return x
 ```
+The learnable parameters of a model are returned by model.params()
 
+```python
+model = ConvNet()
+params = [i for i in model.params()]
+# print conv1's params
+# (6, 1, 5, 5)
+print(params[0].shape)
+```
 ## License
 
 Source codes in the repository follows [MIT](http://www.opensource.org/licenses/MIT) license.
