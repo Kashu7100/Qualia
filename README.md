@@ -68,7 +68,7 @@ Regression of a neural network with sinusoidal activation functions done on labo
 ## Tutorials 
 
 ### automatic differentiation (AD)
-Fundamental to [AD](https://en.wikipedia.org/wiki/Automatic_differentiation) is the decomposition of differentials provided by the chain rule. Qualia implements the reverse accumulation AD in qualia.autograd.
+Fundamental to automatic differentiation [(AD)](https://en.wikipedia.org/wiki/Automatic_differentiation) is the decomposition of differentials provided by the chain rule. Qualia implements the reverse accumulation AD in qualia.autograd.
 
 In the example code of this tutorial, we assume for simplicity that the following symbols are already imported.
 ```python
