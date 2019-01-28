@@ -101,26 +101,26 @@ y.backward()
 print(x.grad)
 ```
 
-### basic usage
-
-The following example will compute the Sum of Squared Error 
+### define network
+An nn.Module contains layers, and a method "forward" that returns the output.
 ```python
-import numpy as np
-from qualia.autograd import Variable
-from qualia.nn.functions import sum
-# Create Variable objects 
-prediction = Variable(np.random.rand(10,3)) 
-label = Variable(np.random.rand(10,3),requires_grad=False) 
-# Write an equation 
-loss = sum((prediction-label)**2,axis=1)/2 
-# Print loss 
-print('loss is: \n{}'.format(loss.data)) 
-# Calclate gradiant 
-loss.backward() 
-# Print gradient 
-print('gradiant for prediction is: \n{}'.format(prediction.grad)) 
-# When requires_grad is False, gradients will be zero 
-print('gradient for label is: \n{}'.format(label.grad)) 
+class ConvNet(Module):
+    def __init__(self):
+        super().__init__()
+        self.conv1 = Conv2d(1, 6, 5)
+        self.conv2 = Conv2d(6, 16, 5)
+        self.fc1 = Linear(16 * 5 * 5, 120)
+        self.fc2 = Linear(120, 84)
+        self.fc3 = Linear(84, 10)
+
+    def forward(self, x):
+        x = max_pool2d(relu(self.conv1(x)), 2)
+        x = max_pool2d(relu(self.conv2(x)), 2)
+        x = reshape(x, (-1,*x.shape))
+        x = relu(self.fc1(x))
+        x = relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
 ```
 
 ## License
