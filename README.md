@@ -146,6 +146,5 @@ Please cite **Qualia** if you use in your research.
   year = {2018},
   publisher = {GitHub},
   howpublished = {\url{https://github.com/Kashu7100/Qualia}},
-
 }
 ```
