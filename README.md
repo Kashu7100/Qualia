@@ -134,3 +134,18 @@ print(params[0].shape)
 ## License
 
 Source codes in the repository follows [MIT](http://www.opensource.org/licenses/MIT) license.
+
+## Citation
+
+Please cite **Qualia** if you use in your research.
+
+```tex
+@misc{qualia,
+  author = {Kashu Yamazaki},
+  title = {{Q}ualia},
+  year = {2018},
+  publisher = {GitHub},
+  howpublished = {\url{https://github.com/Kashu7100/Qualia}},
+
+}
+```
