@@ -139,7 +139,7 @@ Source codes in the repository follows [MIT](http://www.opensource.org/licenses/
 
 Please cite **Qualia** if you use in your research.
 
-```tex
+```bibtex
 @misc{qualia,
   author = {Kashu Yamazaki},
   title = {{Q}ualia},
