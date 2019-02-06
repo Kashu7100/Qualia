@@ -27,3 +27,6 @@ class DDQN(object):
         self.memory = ReplayMemory(10000)
         
         self.optim = Adam(self.main_q_network.params)
+        
+    def __call__(self, , state, episode):
+        pass
