@@ -131,9 +131,6 @@ params = [i for i in model.params()]
 # (6, 1, 5, 5)
 print(params[0].shape)
 ```
-## License
-
-Source codes in the repository follows [MIT](http://www.opensource.org/licenses/MIT) license.
 
 ## Citation
 
@@ -151,3 +148,8 @@ BibTex
   howpublished = {\url{https://github.com/Kashu7100/Qualia}},
 }
 ```
+
+## License
+
+Source codes in the repository follows [MIT](http://www.opensource.org/licenses/MIT) license.
+
