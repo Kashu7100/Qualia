@@ -138,7 +138,10 @@ Source codes in the repository follows [MIT](http://www.opensource.org/licenses/
 ## Citation
 
 Please cite **Qualia** if you use in your research.
-
+```
+Kashu, Y., Qualia - deep learning framework, (2018), GitHub repository, https://github.com/Kashu7100/Qualia
+```
+BibTex
 ```bibtex
 @misc{qualia,
   author = {Kashu Yamazaki},
