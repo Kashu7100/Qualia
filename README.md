@@ -27,14 +27,6 @@ Qualia is a library that consists of the following components:
 | **qualia.optim** | optimizers for training neural nets |
 | **qualia.util** | DataLoader, Trainer and other utility functions for convenience |
 
-## Requirements
-
-* Python 3.x
-* numpy
-* matplotlib 
-* h5py 
-* tqdm
-
 ## Installation
 ```
 $ python setup.py install
