@@ -100,7 +100,7 @@ print(x.grad)
 ```
 
 ### define network
-An nn.Module contains layers, and a method "forward" that returns the output.
+A nn.Module contains layers, and a method "forward" returns the output.
 ```python
 class ConvNet(Module):
     def __init__(self):
